@@ -3,476 +3,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة إدارة داريكو</title>
+    <title>سياسة الخصوصية - تطبيق داري go العقاري</title>
     <link rel="icon" type="image/svg+xml" href="favicon.ico">
-    <link rel="stylesheet" href="css/admin.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            direction: rtl;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            color: #6c757d;
+            font-size: 1.1em;
+        }
+        
+        .meta-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .meta-info p {
+            margin: 5px 0;
+            font-weight: 500;
+        }
+        
+        .content {
+            line-height: 1.8;
+        }
+        
+        .content h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .content h3 {
+            color: #495057;
+            font-size: 1.4em;
+            margin: 25px 0 10px 0;
+        }
+        
+        .content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .content ul {
+            margin: 15px 0;
+            padding-right: 20px;
+        }
+        
+        .content li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        
+        .contact-info {
+            background: #d1ecf1;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #17a2b8;
+            margin: 30px 0;
+        }
+        
+        .contact-info h3 {
+            color: #0c5460;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info p {
+            margin: 8px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #e9ecef;
+            margin-top: 40px;
+            color: #6c757d;
+        }
+        
+        .language-switcher {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .language-switcher a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .language-switcher a:hover {
+            background: #0056b3;
+        }
+        
+        .language-switcher a.active {
+            background: #28a745;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="admin-container">
-        <!-- الشريط الجانبي -->
-        <nav class="sidebar">
-            <div class="sidebar-header">
-                <h2><i class="fas fa-building"></i> داريكو</h2>
-                <p>لوحة الإدارة</p>
-            </div>
+    <div class="container">
+        <div class="language-switcher">
+            <a href="?lang=ar" class="active">العربية</a>
+            <a href="?lang=en">English</a>
+            <a href="?lang=short">النسخة المختصرة</a>
+        </div>
+        
+        <div class="header">
+            <h1>سياسة الخصوصية</h1>
+            <p class="subtitle">تطبيق داري go العقاري</p>
+        </div>
+        
+        <div class="meta-info">
+            <p><strong>تاريخ آخر تحديث:</strong> ديسمبر 2024</p>
+            <p><strong>الإصدار:</strong> 1.0</p>
+            <p><strong>التطبيق:</strong> داري go - منصة العقارات</p>
+        </div>
+        
+        <div class="content">
+            <h2>مقدمة</h2>
+            <p>نرحب بك في تطبيق "داري go" العقاري. نحن ملتزمون بحماية خصوصيتك وضمان أمان معلوماتك الشخصية. تشرح هذه السياسة كيفية جمع واستخدام وحماية المعلومات التي تقدمها لنا عند استخدام التطبيق.</p>
             
-            <ul class="sidebar-menu">
-                <li class="menu-item active" data-page="dashboard">
-                    <i class="fas fa-tachometer-alt"></i>
-                    <span>الرئيسية</span>
-                </li>
-                <li class="menu-item" data-page="users">
-                    <i class="fas fa-users"></i>
-                    <span>إدارة المستخدمين</span>
-                </li>
-                <li class="menu-item" data-page="properties">
-                    <i class="fas fa-home"></i>
-                    <span>إدارة العقارات</span>
-                </li>
-                <li class="menu-item" data-page="stats">
-                    <i class="fas fa-chart-bar"></i>
-                    <span>الإحصائيات</span>
-                </li>
-                <li class="menu-item" data-page="messages">
-                    <i class="fas fa-envelope"></i>
-                    <span>الرسائل</span>
-                </li>
-                <li class="menu-item" data-page="reports">
-                    <i class="fas fa-file-alt"></i>
-                    <span>التقارير</span>
-                </li>
-                <li class="menu-item" data-page="settings">
-                    <i class="fas fa-cog"></i>
-                    <span>الإعدادات</span>
-                </li>
+            <h2>المعلومات التي نجمعها</h2>
+            
+            <h3>1. المعلومات الشخصية</h3>
+            <ul>
+                <li><strong>الاسم الكامل</strong></li>
+                <li><strong>رقم الهاتف</strong></li>
+                <li><strong>عنوان البريد الإلكتروني</strong></li>
+                <li><strong>نوع المستخدم</strong> (فرد أو مكتب عقاري)</li>
+                <li><strong>رقم الترخيص</strong> (للمكاتب العقارية)</li>
+                <li><strong>صورة الملف الشخصي</strong> (اختيارية)</li>
             </ul>
             
-            <div class="sidebar-footer">
-                <button class="logout-btn" onclick="logout()">
-                    <i class="fas fa-sign-out-alt"></i>
-                    تسجيل الخروج
-                </button>
+            <h3>2. معلومات العقارات</h3>
+            <ul>
+                <li><strong>تفاصيل العقارات</strong> المضافة من قبلك</li>
+                <li><strong>الصور</strong> المرفوعة للعقارات</li>
+                <li><strong>الموقع الجغرافي</strong> للعقارات</li>
+                <li><strong>تفاصيل الاتصال</strong> المرتبطة بالعقارات</li>
+            </ul>
+            
+            <h3>3. معلومات الاستخدام</h3>
+            <ul>
+                <li><strong>سجل الأنشطة</strong> في التطبيق</li>
+                <li><strong>العقارات المفضلة</strong></li>
+                <li><strong>عمليات البحث</strong> والفلترة</li>
+                <li><strong>الرسائل</strong> المرسلة والمستقبلة</li>
+            </ul>
+            
+            <h3>4. المعلومات التقنية</h3>
+            <ul>
+                <li><strong>عنوان IP</strong></li>
+                <li><strong>نوع الجهاز</strong> ونظام التشغيل</li>
+                <li><strong>معرف الجهاز الفريد</strong></li>
+                <li><strong>معلومات الشبكة</strong></li>
+            </ul>
+            
+            <h2>كيفية استخدام المعلومات</h2>
+            
+            <h3>1. تقديم الخدمات</h3>
+            <ul>
+                <li><strong>إنشاء وإدارة الحساب</strong></li>
+                <li><strong>عرض العقارات المتاحة</strong></li>
+                <li><strong>تسهيل التواصل</strong> بين المستخدمين</li>
+                <li><strong>إدارة المفضلة</strong> والإشعارات</li>
+            </ul>
+            
+            <h3>2. تحسين التطبيق</h3>
+            <ul>
+                <li><strong>تحليل الاستخدام</strong> لتحسين الخدمات</li>
+                <li><strong>إصلاح الأخطاء</strong> وتحسين الأداء</li>
+                <li><strong>تطوير ميزات جديدة</strong></li>
+            </ul>
+            
+            <h3>3. التواصل</h3>
+            <ul>
+                <li><strong>إرسال إشعارات</strong> مهمة</li>
+                <li><strong>الرد على الاستفسارات</strong></li>
+                <li><strong>إرسال تحديثات</strong> التطبيق</li>
+            </ul>
+            
+            <h2>مشاركة المعلومات</h2>
+            
+            <div class="highlight">
+                <p><strong>نحن لا نبيع معلوماتك الشخصية لأطراف ثالثة.</strong> قد نشارك المعلومات في الحالات التالية:</p>
             </div>
-        </nav>
-
-        <!-- المحتوى الرئيسي -->
-        <main class="main-content">
-            <!-- شريط العلوي -->
-            <header class="top-bar">
-                <div class="top-bar-left">
-                    <button class="sidebar-toggle" onclick="toggleSidebar()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <h1 id="page-title">الرئيسية</h1>
-                </div>
+            
+            <h3>1. مع موافقتك الصريحة</h3>
+            <ul>
+                <li>عند التواصل مع مالكي العقارات</li>
+                <li>عند مشاركة معلومات الاتصال</li>
+            </ul>
+            
+            <h3>2. مع مقدمي الخدمات</h3>
+            <ul>
+                <li><strong>مزودي الاستضافة</strong> والسحابة</li>
+                <li><strong>خدمات التحليلات</strong> (مجهولة الهوية)</li>
+                <li><strong>خدمات الدفع</strong> (إذا تم تطبيقها)</li>
+            </ul>
+            
+            <h3>3. للأغراض القانونية</h3>
+            <ul>
+                <li><strong>الامتثال للقوانين</strong> المحلية</li>
+                <li><strong>حماية حقوقنا</strong> القانونية</li>
+                <li><strong>منع الاحتيال</strong> أو الأنشطة غير القانونية</li>
+            </ul>
+            
+            <h2>أمان المعلومات</h2>
+            
+            <p><strong>نحن نطبق إجراءات أمنية صارمة لحماية معلوماتك:</strong></p>
+            
+            <h3>1. التشفير</h3>
+            <ul>
+                <li><strong>تشفير البيانات</strong> أثناء النقل والتخزين</li>
+                <li><strong>استخدام HTTPS</strong> لجميع الاتصالات</li>
+                <li><strong>حماية كلمات المرور</strong> بتشفير قوي</li>
+            </ul>
+            
+            <h3>2. التحكم في الوصول</h3>
+            <ul>
+                <li><strong>الوصول المحدود</strong> للمعلومات الحساسة</li>
+                <li><strong>مراجعة دورية</strong> للصلاحيات</li>
+                <li><strong>تدريب الموظفين</strong> على حماية البيانات</li>
+            </ul>
+            
+            <h3>3. المراقبة والحماية</h3>
+            <ul>
+                <li><strong>مراقبة مستمرة</strong> للأنشطة المشبوهة</li>
+                <li><strong>نسخ احتياطية</strong> منتظمة للبيانات</li>
+                <li><strong>خطة الاستجابة</strong> للحوادث الأمنية</li>
+            </ul>
+            
+            <h2>حقوقك</h2>
+            
+            <p><strong>لديك الحقوق التالية فيما يتعلق بمعلوماتك الشخصية:</strong></p>
+            
+            <h3>1. الوصول والمراجعة</h3>
+            <ul>
+                <li><strong>طلب نسخة</strong> من معلوماتك الشخصية</li>
+                <li><strong>مراجعة البيانات</strong> المحفوظة عنك</li>
+                <li><strong>التحقق من دقة</strong> المعلومات</li>
+            </ul>
+            
+            <h3>2. التعديل والحذف</h3>
+            <ul>
+                <li><strong>تحديث معلوماتك</strong> الشخصية</li>
+                <li><strong>تصحيح البيانات</strong> غير الصحيحة</li>
+                <li><strong>حذف حسابك</strong> ومعلوماتك</li>
+            </ul>
+            
+            <h3>3. التحكم في الخصوصية</h3>
+            <ul>
+                <li><strong>تعديل إعدادات</strong> الخصوصية</li>
+                <li><strong>إلغاء الاشتراك</strong> في الإشعارات</li>
+                <li><strong>طلب حذف</strong> معلومات معينة</li>
+            </ul>
+            
+            <h2>ملفات تعريف الارتباط والتقنيات المشابهة</h2>
+            
+            <p><strong>نستخدم تقنيات مختلفة لتحسين تجربتك:</strong></p>
+            
+            <h3>1. ملفات تعريف الارتباط</h3>
+            <ul>
+                <li><strong>ملفات أساسية</strong> لضمان عمل التطبيق</li>
+                <li><strong>ملفات تحليلية</strong> لفهم الاستخدام</li>
+                <li><strong>ملفات تفضيلات</strong> لحفظ إعداداتك</li>
+            </ul>
+            
+            <h3>2. تقنيات التتبع</h3>
+            <ul>
+                <li><strong>معرفات فريدة</strong> للأجهزة</li>
+                <li><strong>تتبع الجلسات</strong> والأنشطة</li>
+                <li><strong>تحليل الأداء</strong> والاستخدام</li>
+            </ul>
+            
+            <h2>الاحتفاظ بالبيانات</h2>
+            
+            <p><strong>نحتفظ بمعلوماتك للمدة التالية:</strong></p>
+            
+            <h3>1. المعلومات الشخصية</h3>
+            <ul>
+                <li><strong>طوال فترة</strong> وجود حسابك النشط</li>
+                <li><strong>سنة واحدة</strong> بعد إلغاء الحساب</li>
+                <li><strong>أطول إذا تطلب القانون</strong> ذلك</li>
+            </ul>
+            
+            <h3>2. معلومات العقارات</h3>
+            <ul>
+                <li><strong>حتى حذف العقار</strong> من التطبيق</li>
+                <li><strong>سنة واحدة</strong> بعد الحذف للنسخ الاحتياطية</li>
+            </ul>
+            
+            <h3>3. سجلات النظام</h3>
+            <ul>
+                <li><strong>سنة واحدة</strong> لسجلات الأمان</li>
+                <li><strong>6 أشهر</strong> لسجلات الاستخدام</li>
+            </ul>
+            
+            <h2>خصوصية الأطفال</h2>
+            <p>التطبيق غير مخصص للأطفال دون سن 13 عاماً. نحن لا نجمع معلومات شخصية من الأطفال دون موافقة الوالدين.</p>
+            
+            <h2>التحديثات على السياسة</h2>
+            
+            <p><strong>قد نحدث هذه السياسة من وقت لآخر. سنقوم بما يلي:</strong></p>
+            
+            <h3>1. إشعار التحديثات</h3>
+            <ul>
+                <li><strong>إشعار في التطبيق</strong> عن التحديثات المهمة</li>
+                <li><strong>إرسال بريد إلكتروني</strong> للمستخدمين المسجلين</li>
+                <li><strong>نشر الإشعار</strong> على موقعنا الإلكتروني</li>
+            </ul>
+            
+            <h3>2. موافقتك على التحديثات</h3>
+            <ul>
+                <li><strong>الاستمرار في استخدام التطبيق</strong> يعني موافقتك على التحديثات</li>
+                <li><strong>إلغاء الحساب</strong> إذا لم توافق على التغييرات</li>
+            </ul>
+            
+            <h2>الامتثال للقوانين</h2>
+            
+            <p><strong>نحن ملتزمون بالامتثال للقوانين التالية:</strong></p>
+            
+            <h3>1. القوانين المحلية</h3>
+            <ul>
+                <li><strong>قانون حماية البيانات</strong> العراقي</li>
+                <li><strong>القوانين التجارية</strong> المحلية</li>
+                <li><strong>أنظمة الاتصالات</strong> المحلية</li>
+            </ul>
+            
+            <h3>2. المعايير الدولية</h3>
+            <ul>
+                <li><strong>معايير حماية البيانات</strong> الدولية</li>
+                <li><strong>أفضل الممارسات</strong> في الأمان السيبراني</li>
+            </ul>
+            
+            <div class="contact-info">
+                <h3>التواصل معنا</h3>
+                <p>إذا كان لديك أي أسئلة حول سياسة الخصوصية، يمكنك التواصل معنا:</p>
                 
-                <div class="top-bar-right">
-                    <div class="user-info">
-                        <span id="admin-name">المدير</span>
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                </div>
-            </header>
-
-            <!-- محتوى الصفحات -->
-            <div class="content-area">
-                <!-- صفحة الرئيسية -->
-                <div id="dashboard-page" class="page active">
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="stat-info">
-                                <h3 id="total-users">0</h3>
-                                <p>إجمالي المستخدمين</p>
-                            </div>
-                        </div>
-                        
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <div class="stat-info">
-                                <h3 id="total-properties">0</h3>
-                                <p>إجمالي العقارات</p>
-                            </div>
-                        </div>
-                        
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="stat-info">
-                                <h3 id="pending-properties">0</h3>
-                                <p>عقارات في الانتظار</p>
-                            </div>
-                        </div>
-                        
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="stat-info">
-                                <h3 id="approved-properties">0</h3>
-                                <p>عقارات معتمدة</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="recent-activity">
-                        <h2>النشاط الأخير</h2>
-                        <div class="activity-list" id="recent-activity">
-                            <!-- سيتم تحميل النشاط الأخير هنا -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- صفحة إدارة المستخدمين -->
-                <div id="users-page" class="page">
-                    <div class="page-header">
-                        <h2>إدارة المستخدمين</h2>
-                        <div class="page-actions">
-                            <button class="btn btn-primary" onclick="refreshUsers()">
-                                <i class="fas fa-sync"></i> تحديث
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="filters">
-                        <input type="text" id="user-search" placeholder="البحث عن مستخدم..." onkeyup="filterUsers()">
-                        <select id="user-type-filter" onchange="filterUsers()">
-                            <option value="">جميع الأنواع</option>
-                            <option value="user">مستخدم عادي</option>
-                            <option value="agent">وسيط عقاري</option>
-                            <option value="admin">مدير</option>
-                        </select>
-                        <select id="user-status-filter" onchange="filterUsers()">
-                            <option value="">جميع الحالات</option>
-                            <option value="active">نشط</option>
-                            <option value="inactive">غير نشط</option>
-                        </select>
-                    </div>
-                    
-                    <div class="table-container">
-                        <table class="data-table" id="users-table">
-                            <thead>
-                                <tr>
-                                    <th>الاسم</th>
-                                    <th>البريد الإلكتروني</th>
-                                    <th>النوع</th>
-                                    <th>الحالة</th>
-                                    <th>تاريخ التسجيل</th>
-                                    <th>الإجراءات</th>
-                                </tr>
-                            </thead>
-                            <tbody id="users-table-body">
-                                <!-- سيتم تحميل المستخدمين هنا -->
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="pagination" id="users-pagination">
-                        <!-- سيتم إضافة أزرار الصفحات هنا -->
-                    </div>
-                </div>
-
-                <!-- صفحة إدارة العقارات -->
-                <div id="properties-page" class="page">
-                    <div class="page-header">
-                        <h2>إدارة العقارات</h2>
-                        <div class="page-actions">
-                            <button class="btn btn-primary" onclick="refreshProperties()">
-                                <i class="fas fa-sync"></i> تحديث
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="filters">
-                        <input type="text" id="property-search" placeholder="البحث عن عقار..." onkeyup="filterProperties()">
-                        <select id="property-type-filter" onchange="filterProperties()">
-                            <option value="">جميع الأنواع</option>
-                            <option value="بيع">بيع</option>
-                            <option value="إيجار">إيجار</option>
-                        </select>
-                        <select id="property-status-filter" onchange="filterProperties()">
-                            <option value="">جميع الحالات</option>
-                            <option value="pending">في الانتظار</option>
-                            <option value="approved">معتمد</option>
-                            <option value="rejected">مرفوض</option>
-                        </select>
-                    </div>
-                    
-                    <div class="table-container">
-                        <table class="data-table" id="properties-table">
-                            <thead>
-                                <tr>
-                                    <th>العنوان</th>
-                                    <th>المالك</th>
-                                    <th>النوع</th>
-                                    <th>السعر</th>
-                                    <th>الحالة</th>
-                                    <th>تاريخ الإضافة</th>
-                                    <th>الإجراءات</th>
-                                </tr>
-                            </thead>
-                            <tbody id="properties-table-body">
-                                <!-- سيتم تحميل العقارات هنا -->
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="pagination" id="properties-pagination">
-                        <!-- سيتم إضافة أزرار الصفحات هنا -->
-                    </div>
-                </div>
-
-                <!-- صفحة الإحصائيات -->
-                <div id="stats-page" class="page">
-                    <div class="page-header">
-                        <h2>الإحصائيات</h2>
-                        <div class="page-actions">
-                            <button class="btn btn-primary" onclick="refreshStats()">
-                                <i class="fas fa-sync"></i> تحديث
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="charts-container">
-                        <div class="chart-card">
-                            <h3>توزيع المستخدمين حسب النوع</h3>
-                            <canvas id="users-chart"></canvas>
-                        </div>
-                        
-                        <div class="chart-card">
-                            <h3>توزيع العقارات حسب النوع</h3>
-                            <canvas id="properties-chart"></canvas>
-                        </div>
-                        
-                        <div class="chart-card">
-                            <h3>حالة العقارات</h3>
-                            <canvas id="status-chart"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- صفحة الرسائل -->
-                <div id="messages-page" class="page">
-                    <div class="page-header">
-                        <h2>إدارة الرسائل</h2>
-                        <div class="page-actions">
-                            <button class="btn btn-primary" onclick="refreshMessages()">
-                                <i class="fas fa-sync"></i> تحديث
-                            </button>
-                            <button class="btn btn-success" onclick="markAllAsRead()">
-                                <i class="fas fa-check"></i> تعيين الكل كمقروء
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="filters">
-                        <input type="text" id="message-search" placeholder="البحث في الرسائل..." onkeyup="filterMessages()">
-                        <select id="message-status-filter" onchange="filterMessages()">
-                            <option value="">جميع الحالات</option>
-                            <option value="unread">غير مقروء</option>
-                            <option value="read">مقروء</option>
-                            <option value="replied">تم الرد</option>
-                        </select>
-                        <select id="message-type-filter" onchange="filterMessages()">
-                            <option value="">جميع الأنواع</option>
-                            <option value="inquiry">استفسار</option>
-                            <option value="complaint">شكوى</option>
-                            <option value="suggestion">اقتراح</option>
-                            <option value="support">دعم فني</option>
-                        </select>
-                    </div>
-                    
-                    <div class="table-container">
-                        <table class="data-table" id="messages-table">
-                            <thead>
-                                <tr>
-                                    <th>المرسل</th>
-                                    <th>البريد الإلكتروني</th>
-                                    <th>النوع</th>
-                                    <th>الموضوع</th>
-                                    <th>الحالة</th>
-                                    <th>التاريخ</th>
-                                    <th>الإجراءات</th>
-                                </tr>
-                            </thead>
-                            <tbody id="messages-table-body">
-                                <!-- سيتم تحميل الرسائل هنا -->
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="pagination" id="messages-pagination">
-                        <!-- سيتم إضافة أزرار الصفحات هنا -->
-                    </div>
-                </div>
-
-                <!-- صفحة التقارير -->
-                <div id="reports-page" class="page">
-                    <div class="page-header">
-                        <h2>التقارير والإحصائيات المتقدمة</h2>
-                        <div class="page-actions">
-                            <button class="btn btn-primary" onclick="generateReport()">
-                                <i class="fas fa-download"></i> تصدير تقرير
-                            </button>
-                            <button class="btn btn-info" onclick="refreshReports()">
-                                <i class="fas fa-sync"></i> تحديث
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="reports-grid">
-                        <div class="report-card">
-                            <h3>تقرير المستخدمين</h3>
-                            <div class="report-content">
-                                <div class="report-item">
-                                    <span>المستخدمون الجدد هذا الشهر:</span>
-                                    <strong id="new-users-month">0</strong>
-                                </div>
-                                <div class="report-item">
-                                    <span>المستخدمون النشطون:</span>
-                                    <strong id="active-users">0</strong>
-                                </div>
-                                <div class="report-item">
-                                    <span>معدل النمو:</span>
-                                    <strong id="growth-rate">0%</strong>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="report-card">
-                            <h3>تقرير العقارات</h3>
-                            <div class="report-content">
-                                <div class="report-item">
-                                    <span>العقارات المضافة هذا الشهر:</span>
-                                    <strong id="new-properties-month">0</strong>
-                                </div>
-                                <div class="report-item">
-                                    <span>معدل الاعتماد:</span>
-                                    <strong id="approval-rate">0%</strong>
-                                </div>
-                                <div class="report-item">
-                                    <span>متوسط وقت المراجعة:</span>
-                                    <strong id="avg-review-time">0 ساعة</strong>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="report-card">
-                            <h3>تقرير الأداء</h3>
-                            <div class="report-content">
-                                <div class="report-item">
-                                    <span>زوار الموقع اليوم:</span>
-                                    <strong id="daily-visitors">0</strong>
-                                </div>
-                                <div class="report-item">
-                                    <span>معدل الارتداد:</span>
-                                    <strong id="bounce-rate">0%</strong>
-                                </div>
-                                <div class="report-item">
-                                    <span>متوسط وقت الجلسة:</span>
-                                    <strong id="avg-session-time">0 دقيقة</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="charts-section">
-                        <h3>الرسوم البيانية</h3>
-                        <div class="charts-grid">
-                            <div class="chart-container">
-                                <h4>نمو المستخدمين</h4>
-                                <canvas id="users-growth-chart"></canvas>
-                            </div>
-                            <div class="chart-container">
-                                <h4>توزيع العقارات حسب المحافظة</h4>
-                                <canvas id="properties-location-chart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- صفحة الإعدادات -->
-                <div id="settings-page" class="page">
-                    <div class="page-header">
-                        <h2>الإعدادات</h2>
-                    </div>
-                    
-                    <div class="settings-container">
-                        <div class="setting-group">
-                            <h3>إعدادات النظام</h3>
-                            <div class="setting-item">
-                                <label>اسم الموقع</label>
-                                <input type="text" value="داريكو" id="site-name">
-                            </div>
-                            <div class="setting-item">
-                                <label>وصف الموقع</label>
-                                <textarea id="site-description">منصة عقارية متكاملة</textarea>
-                            </div>
-                        </div>
-                        
-                        <div class="setting-group">
-                            <h3>إعدادات البريد الإلكتروني</h3>
-                            <div class="setting-item">
-                                <label>SMTP Server</label>
-                                <input type="text" id="smtp-server">
-                            </div>
-                            <div class="setting-item">
-                                <label>Port</label>
-                                <input type="number" id="smtp-port">
-                            </div>
-                        </div>
-                        
-                        <div class="setting-actions">
-                            <button class="btn btn-primary" onclick="saveSettings()">
-                                <i class="fas fa-save"></i> حفظ الإعدادات
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <h3>معلومات الاتصال:</h3>
+                <p><strong>البريد الإلكتروني:</strong> privacy@darigo.com</p>
+                <p><strong>الهاتف:</strong> +964-XXX-XXX-XXXX</p>
+                <p><strong>العنوان:</strong> بغداد، العراق</p>
+                
+                <h3>أوقات الاستجابة:</h3>
+                <p><strong>البريد الإلكتروني:</strong> خلال 48 ساعة</p>
+                <p><strong>الهاتف:</strong> من الأحد إلى الخميس، 9 صباحاً - 5 مساءً</p>
             </div>
-        </main>
-    </div>
-
-    <!-- نافذة تسجيل الدخول -->
-    <div id="login-modal" class="modal">
-        <div class="modal-content">
-            <div class="login-form">
-                <h2>تسجيل دخول المدير</h2>
-                <form id="login-form">
-                    <div class="form-group">
-                        <label>البريد الإلكتروني</label>
-                        <input type="email" id="login-email" required>
-                    </div>
-                    <div class="form-group">
-                        <label>كلمة المرور</label>
-                        <input type="password" id="login-password" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">
-                        <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
-                    </button>
-                </form>
+            
+            <h2>الخلاصة</h2>
+            <p>نحن ملتزمون بحماية خصوصيتك وضمان أمان معلوماتك. هذه السياسة تشرح كيفية تعاملنا مع معلوماتك الشخصية ونحن نرحب بأي استفسارات أو اقتراحات لديك.</p>
+            
+            <div class="highlight">
+                <p><strong>شكراً لثقتك في تطبيق داري go العقاري!</strong></p>
             </div>
+        </div>
+        
+        <div class="footer">
+            <p>هذه السياسة سارية المفعول اعتباراً من ديسمبر 2024 وتخضع للتحديثات الدورية حسب الحاجة.</p>
+            <p>&copy; 2024 داري go - جميع الحقوق محفوظة</p>
         </div>
     </div>
 
-    <!-- نافذة تأكيد الإجراء -->
-    <div id="confirm-modal" class="modal">
-        <div class="modal-content">
-            <h3 id="confirm-title">تأكيد الإجراء</h3>
-            <p id="confirm-message">هل أنت متأكد من هذا الإجراء؟</p>
-            <div class="modal-actions">
-                <button class="btn btn-secondary" onclick="closeConfirmModal()">إلغاء</button>
-                <button class="btn btn-danger" id="confirm-btn" onclick="executeConfirmAction()">تأكيد</button>
-            </div>
-        </div>
-    </div>
+    <script>
+        // JavaScript لتغيير اللغة
+        function changeLanguage(lang) {
+            const urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('lang', lang);
+            window.location.search = urlParams.toString();
+        }
 
-    <script src="js/admin.js"></script>
+        // تحديث الروابط عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const currentLang = urlParams.get('lang') || 'ar';
+            
+            // تحديث الروابط
+            const links = document.querySelectorAll('.language-switcher a');
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href.includes('?lang=')) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const lang = href.split('=')[1];
+                        changeLanguage(lang);
+                    });
+                }
+            });
+            
+            // تحديث النشط
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes('lang=' + currentLang)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
