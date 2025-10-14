@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة إدارة داريكو</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.ico">
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- الشريط الجانبي -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-building"></i> داريكو</h2>
+                <p>لوحة الإدارة</p>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li class="menu-item active" data-page="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>الرئيسية</span>
+                </li>
+                <li class="menu-item" data-page="users">
+                    <i class="fas fa-users"></i>
+                    <span>إدارة المستخدمين</span>
+                </li>
+                <li class="menu-item" data-page="properties">
+                    <i class="fas fa-home"></i>
+                    <span>إدارة العقارات</span>
+                </li>
+                <li class="menu-item" data-page="stats">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>الإحصائيات</span>
+                </li>
+                <li class="menu-item" data-page="messages">
+                    <i class="fas fa-envelope"></i>
+                    <span>الرسائل</span>
+                </li>
+                <li class="menu-item" data-page="reports">
+                    <i class="fas fa-file-alt"></i>
+                    <span>التقارير</span>
+                </li>
+                <li class="menu-item" data-page="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>الإعدادات</span>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    تسجيل الخروج
+                </button>
+            </div>
+        </nav>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            <!-- شريط العلوي -->
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 id="page-title">الرئيسية</h1>
+                </div>
+                
+                <div class="top-bar-right">
+                    <div class="user-info">
+                        <span id="admin-name">المدير</span>
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- محتوى الصفحات -->
+            <div class="content-area">
+                <!-- صفحة الرئيسية -->
+                <div id="dashboard-page" class="page active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="total-users">0</h3>
+                                <p>إجمالي المستخدمين</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="total-properties">0</h3>
+                                <p>إجمالي العقارات</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="pending-properties">0</h3>
+                                <p>عقارات في الانتظار</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="approved-properties">0</h3>
+                                <p>عقارات معتمدة</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activity">
+                        <h2>النشاط الأخير</h2>
+                        <div class="activity-list" id="recent-activity">
+                            <!-- سيتم تحميل النشاط الأخير هنا -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- صفحة إدارة المستخدمين -->
+                <div id="users-page" class="page">
+                    <div class="page-header">
+                        <h2>إدارة المستخدمين</h2>
+                        <div class="page-actions">
+                            <button class="btn btn-primary" onclick="refreshUsers()">
+                                <i class="fas fa-sync"></i> تحديث
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="filters">
+                        <input type="text" id="user-search" placeholder="البحث عن مستخدم..." onkeyup="filterUsers()">
+                        <select id="user-type-filter" onchange="filterUsers()">
+                            <option value="">جميع الأنواع</option>
+                            <option value="user">مستخدم عادي</option>
+                            <option value="agent">وسيط عقاري</option>
+                            <option value="admin">مدير</option>
+                        </select>
+                        <select id="user-status-filter" onchange="filterUsers()">
+                            <option value="">جميع الحالات</option>
+                            <option value="active">نشط</option>
+                            <option value="inactive">غير نشط</option>
+                        </select>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="data-table" id="users-table">
+                            <thead>
+                                <tr>
+                                    <th>الاسم</th>
+                                    <th>البريد الإلكتروني</th>
+                                    <th>النوع</th>
+                                    <th>الحالة</th>
+                                    <th>تاريخ التسجيل</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table-body">
+                                <!-- سيتم تحميل المستخدمين هنا -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="pagination" id="users-pagination">
+                        <!-- سيتم إضافة أزرار الصفحات هنا -->
+                    </div>
+                </div>
+
+                <!-- صفحة إدارة العقارات -->
+                <div id="properties-page" class="page">
+                    <div class="page-header">
+                        <h2>إدارة العقارات</h2>
+                        <div class="page-actions">
+                            <button class="btn btn-primary" onclick="refreshProperties()">
+                                <i class="fas fa-sync"></i> تحديث
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="filters">
+                        <input type="text" id="property-search" placeholder="البحث عن عقار..." onkeyup="filterProperties()">
+                        <select id="property-type-filter" onchange="filterProperties()">
+                            <option value="">جميع الأنواع</option>
+                            <option value="بيع">بيع</option>
+                            <option value="إيجار">إيجار</option>
+                        </select>
+                        <select id="property-status-filter" onchange="filterProperties()">
+                            <option value="">جميع الحالات</option>
+                            <option value="pending">في الانتظار</option>
+                            <option value="approved">معتمد</option>
+                            <option value="rejected">مرفوض</option>
+                        </select>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="data-table" id="properties-table">
+                            <thead>
+                                <tr>
+                                    <th>العنوان</th>
+                                    <th>المالك</th>
+                                    <th>النوع</th>
+                                    <th>السعر</th>
+                                    <th>الحالة</th>
+                                    <th>تاريخ الإضافة</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="properties-table-body">
+                                <!-- سيتم تحميل العقارات هنا -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="pagination" id="properties-pagination">
+                        <!-- سيتم إضافة أزرار الصفحات هنا -->
+                    </div>
+                </div>
+
+                <!-- صفحة الإحصائيات -->
+                <div id="stats-page" class="page">
+                    <div class="page-header">
+                        <h2>الإحصائيات</h2>
+                        <div class="page-actions">
+                            <button class="btn btn-primary" onclick="refreshStats()">
+                                <i class="fas fa-sync"></i> تحديث
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="charts-container">
+                        <div class="chart-card">
+                            <h3>توزيع المستخدمين حسب النوع</h3>
+                            <canvas id="users-chart"></canvas>
+                        </div>
+                        
+                        <div class="chart-card">
+                            <h3>توزيع العقارات حسب النوع</h3>
+                            <canvas id="properties-chart"></canvas>
+                        </div>
+                        
+                        <div class="chart-card">
+                            <h3>حالة العقارات</h3>
+                            <canvas id="status-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- صفحة الرسائل -->
+                <div id="messages-page" class="page">
+                    <div class="page-header">
+                        <h2>إدارة الرسائل</h2>
+                        <div class="page-actions">
+                            <button class="btn btn-primary" onclick="refreshMessages()">
+                                <i class="fas fa-sync"></i> تحديث
+                            </button>
+                            <button class="btn btn-success" onclick="markAllAsRead()">
+                                <i class="fas fa-check"></i> تعيين الكل كمقروء
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="filters">
+                        <input type="text" id="message-search" placeholder="البحث في الرسائل..." onkeyup="filterMessages()">
+                        <select id="message-status-filter" onchange="filterMessages()">
+                            <option value="">جميع الحالات</option>
+                            <option value="unread">غير مقروء</option>
+                            <option value="read">مقروء</option>
+                            <option value="replied">تم الرد</option>
+                        </select>
+                        <select id="message-type-filter" onchange="filterMessages()">
+                            <option value="">جميع الأنواع</option>
+                            <option value="inquiry">استفسار</option>
+                            <option value="complaint">شكوى</option>
+                            <option value="suggestion">اقتراح</option>
+                            <option value="support">دعم فني</option>
+                        </select>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="data-table" id="messages-table">
+                            <thead>
+                                <tr>
+                                    <th>المرسل</th>
+                                    <th>البريد الإلكتروني</th>
+                                    <th>النوع</th>
+                                    <th>الموضوع</th>
+                                    <th>الحالة</th>
+                                    <th>التاريخ</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="messages-table-body">
+                                <!-- سيتم تحميل الرسائل هنا -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="pagination" id="messages-pagination">
+                        <!-- سيتم إضافة أزرار الصفحات هنا -->
+                    </div>
+                </div>
+
+                <!-- صفحة التقارير -->
+                <div id="reports-page" class="page">
+                    <div class="page-header">
+                        <h2>التقارير والإحصائيات المتقدمة</h2>
+                        <div class="page-actions">
+                            <button class="btn btn-primary" onclick="generateReport()">
+                                <i class="fas fa-download"></i> تصدير تقرير
+                            </button>
+                            <button class="btn btn-info" onclick="refreshReports()">
+                                <i class="fas fa-sync"></i> تحديث
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="reports-grid">
+                        <div class="report-card">
+                            <h3>تقرير المستخدمين</h3>
+                            <div class="report-content">
+                                <div class="report-item">
+                                    <span>المستخدمون الجدد هذا الشهر:</span>
+                                    <strong id="new-users-month">0</strong>
+                                </div>
+                                <div class="report-item">
+                                    <span>المستخدمون النشطون:</span>
+                                    <strong id="active-users">0</strong>
+                                </div>
+                                <div class="report-item">
+                                    <span>معدل النمو:</span>
+                                    <strong id="growth-rate">0%</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="report-card">
+                            <h3>تقرير العقارات</h3>
+                            <div class="report-content">
+                                <div class="report-item">
+                                    <span>العقارات المضافة هذا الشهر:</span>
+                                    <strong id="new-properties-month">0</strong>
+                                </div>
+                                <div class="report-item">
+                                    <span>معدل الاعتماد:</span>
+                                    <strong id="approval-rate">0%</strong>
+                                </div>
+                                <div class="report-item">
+                                    <span>متوسط وقت المراجعة:</span>
+                                    <strong id="avg-review-time">0 ساعة</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="report-card">
+                            <h3>تقرير الأداء</h3>
+                            <div class="report-content">
+                                <div class="report-item">
+                                    <span>زوار الموقع اليوم:</span>
+                                    <strong id="daily-visitors">0</strong>
+                                </div>
+                                <div class="report-item">
+                                    <span>معدل الارتداد:</span>
+                                    <strong id="bounce-rate">0%</strong>
+                                </div>
+                                <div class="report-item">
+                                    <span>متوسط وقت الجلسة:</span>
+                                    <strong id="avg-session-time">0 دقيقة</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="charts-section">
+                        <h3>الرسوم البيانية</h3>
+                        <div class="charts-grid">
+                            <div class="chart-container">
+                                <h4>نمو المستخدمين</h4>
+                                <canvas id="users-growth-chart"></canvas>
+                            </div>
+                            <div class="chart-container">
+                                <h4>توزيع العقارات حسب المحافظة</h4>
+                                <canvas id="properties-location-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- صفحة الإعدادات -->
+                <div id="settings-page" class="page">
+                    <div class="page-header">
+                        <h2>الإعدادات</h2>
+                    </div>
+                    
+                    <div class="settings-container">
+                        <div class="setting-group">
+                            <h3>إعدادات النظام</h3>
+                            <div class="setting-item">
+                                <label>اسم الموقع</label>
+                                <input type="text" value="داريكو" id="site-name">
+                            </div>
+                            <div class="setting-item">
+                                <label>وصف الموقع</label>
+                                <textarea id="site-description">منصة عقارية متكاملة</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-group">
+                            <h3>إعدادات البريد الإلكتروني</h3>
+                            <div class="setting-item">
+                                <label>SMTP Server</label>
+                                <input type="text" id="smtp-server">
+                            </div>
+                            <div class="setting-item">
+                                <label>Port</label>
+                                <input type="number" id="smtp-port">
+                            </div>
+                        </div>
+                        
+                        <div class="setting-actions">
+                            <button class="btn btn-primary" onclick="saveSettings()">
+                                <i class="fas fa-save"></i> حفظ الإعدادات
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- نافذة تسجيل الدخول -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="login-form">
+                <h2>تسجيل دخول المدير</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>كلمة المرور</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة تأكيد الإجراء -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="confirm-title">تأكيد الإجراء</h3>
+            <p id="confirm-message">هل أنت متأكد من هذا الإجراء؟</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeConfirmModal()">إلغاء</button>
+                <button class="btn btn-danger" id="confirm-btn" onclick="executeConfirmAction()">تأكيد</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
