@@ -20,6 +20,10 @@
             direction: rtl;
         }
         
+        body[dir="ltr"] {
+            direction: ltr;
+        }
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -90,6 +94,11 @@
             padding-right: 20px;
         }
         
+        body[dir="ltr"] .content ul {
+            padding-left: 20px;
+            padding-right: 0;
+        }
+        
         .content li {
             margin-bottom: 8px;
         }
@@ -151,6 +160,10 @@
             background: #28a745;
         }
         
+        .hidden {
+            display: none;
+        }
+        
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
@@ -170,23 +183,24 @@
 <body>
     <div class="container">
         <div class="language-switcher">
-            <a href="?lang=ar" class="active">العربية</a>
-            <a href="?lang=en">English</a>
-            <a href="?lang=short">النسخة المختصرة</a>
+            <a href="#" onclick="changeLanguage('ar')" id="lang-ar" class="active">العربية</a>
+            <a href="#" onclick="changeLanguage('en')" id="lang-en">English</a>
+            <a href="#" onclick="changeLanguage('short')" id="lang-short">النسخة المختصرة</a>
         </div>
         
-        <div class="header">
-            <h1>سياسة الخصوصية</h1>
-            <p class="subtitle">تطبيق داري go العقاري</p>
-        </div>
-        
-        <div class="meta-info">
-            <p><strong>تاريخ آخر تحديث:</strong> ديسمبر 2024</p>
-            <p><strong>الإصدار:</strong> 1.0</p>
-            <p><strong>التطبيق:</strong> داري go - منصة العقارات</p>
-        </div>
-        
-        <div class="content">
+        <!-- المحتوى العربي -->
+        <div id="content-ar" class="content">
+            <div class="header">
+                <h1>سياسة الخصوصية</h1>
+                <p class="subtitle">تطبيق داري go العقاري</p>
+            </div>
+            
+            <div class="meta-info">
+                <p><strong>تاريخ آخر تحديث:</strong> ديسمبر 2024</p>
+                <p><strong>الإصدار:</strong> 1.0</p>
+                <p><strong>التطبيق:</strong> داري go - منصة العقارات</p>
+            </div>
+            
             <h2>مقدمة</h2>
             <p>نرحب بك في تطبيق "داري go" العقاري. نحن ملتزمون بحماية خصوصيتك وضمان أمان معلوماتك الشخصية. تشرح هذه السياسة كيفية جمع واستخدام وحماية المعلومات التي تقدمها لنا عند استخدام التطبيق.</p>
             
@@ -426,45 +440,413 @@
             </div>
         </div>
         
+        <!-- المحتوى الإنجليزي -->
+        <div id="content-en" class="content hidden">
+            <div class="header">
+                <h1>Privacy Policy</h1>
+                <p class="subtitle">Darigo Real Estate App</p>
+            </div>
+            
+            <div class="meta-info">
+                <p><strong>Last Updated:</strong> December 2024</p>
+                <p><strong>Version:</strong> 1.0</p>
+                <p><strong>App:</strong> Darigo - Real Estate Platform</p>
+            </div>
+            
+            <h2>Introduction</h2>
+            <p>Welcome to the "Dari go" Real Estate App. We are committed to protecting your privacy and ensuring the security of your personal information. This policy explains how we collect, use, and protect the information you provide to us when using the app.</p>
+            
+            <h2>Information We Collect</h2>
+            
+            <h3>1. Personal Information</h3>
+            <ul>
+                <li><strong>Full Name</strong></li>
+                <li><strong>Phone Number</strong></li>
+                <li><strong>Email Address</strong></li>
+                <li><strong>User Type</strong> (Individual or Real Estate Agency)</li>
+                <li><strong>License Number</strong> (for Real Estate Agencies)</li>
+                <li><strong>Profile Picture</strong> (optional)</li>
+            </ul>
+            
+            <h3>2. Property Information</h3>
+            <ul>
+                <li><strong>Property details</strong> added by you</li>
+                <li><strong>Images</strong> uploaded for properties</li>
+                <li><strong>Geographic location</strong> of properties</li>
+                <li><strong>Contact information</strong> associated with properties</li>
+            </ul>
+            
+            <h3>3. Usage Information</h3>
+            <ul>
+                <li><strong>Activity logs</strong> in the app</li>
+                <li><strong>Favorite properties</strong></li>
+                <li><strong>Search and filter</strong> operations</li>
+                <li><strong>Messages</strong> sent and received</li>
+            </ul>
+            
+            <h3>4. Technical Information</h3>
+            <ul>
+                <li><strong>IP Address</strong></li>
+                <li><strong>Device type</strong> and operating system</li>
+                <li><strong>Unique device identifier</strong></li>
+                <li><strong>Network information</strong></li>
+            </ul>
+            
+            <h2>How We Use Information</h2>
+            
+            <h3>1. Providing Services</h3>
+            <ul>
+                <li><strong>Creating and managing</strong> your account</li>
+                <li><strong>Displaying available</strong> properties</li>
+                <li><strong>Facilitating communication</strong> between users</li>
+                <li><strong>Managing favorites</strong> and notifications</li>
+            </ul>
+            
+            <h3>2. App Improvement</h3>
+            <ul>
+                <li><strong>Analyzing usage</strong> to improve services</li>
+                <li><strong>Fixing bugs</strong> and improving performance</li>
+                <li><strong>Developing new features</strong></li>
+            </ul>
+            
+            <h3>3. Communication</h3>
+            <ul>
+                <li><strong>Sending important</strong> notifications</li>
+                <li><strong>Responding to inquiries</strong></li>
+                <li><strong>Sending app updates</strong></li>
+            </ul>
+            
+            <h2>Information Sharing</h2>
+            
+            <div class="highlight">
+                <p><strong>We do not sell your personal information to third parties.</strong> We may share information in the following cases:</p>
+            </div>
+            
+            <h3>1. With Your Explicit Consent</h3>
+            <ul>
+                <li>When communicating with property owners</li>
+                <li>When sharing contact information</li>
+            </ul>
+            
+            <h3>2. With Service Providers</h3>
+            <ul>
+                <li><strong>Hosting and cloud</strong> providers</li>
+                <li><strong>Analytics services</strong> (anonymized)</li>
+                <li><strong>Payment services</strong> (if implemented)</li>
+            </ul>
+            
+            <h3>3. For Legal Purposes</h3>
+            <ul>
+                <li><strong>Compliance with local</strong> laws</li>
+                <li><strong>Protecting our legal</strong> rights</li>
+                <li><strong>Preventing fraud</strong> or illegal activities</li>
+            </ul>
+            
+            <h2>Information Security</h2>
+            
+            <p><strong>We implement strict security measures to protect your information:</strong></p>
+            
+            <h3>1. Encryption</h3>
+            <ul>
+                <li><strong>Data encryption</strong> during transmission and storage</li>
+                <li><strong>HTTPS usage</strong> for all communications</li>
+                <li><strong>Strong password</strong> protection</li>
+            </ul>
+            
+            <h3>2. Access Control</h3>
+            <ul>
+                <li><strong>Limited access</strong> to sensitive information</li>
+                <li><strong>Regular review</strong> of permissions</li>
+                <li><strong>Staff training</strong> on data protection</li>
+            </ul>
+            
+            <h3>3. Monitoring and Protection</h3>
+            <ul>
+                <li><strong>Continuous monitoring</strong> of suspicious activities</li>
+                <li><strong>Regular backups</strong> of data</li>
+                <li><strong>Incident response</strong> plan</li>
+            </ul>
+            
+            <h2>Your Rights</h2>
+            
+            <p><strong>You have the following rights regarding your personal information:</strong></p>
+            
+            <h3>1. Access and Review</h3>
+            <ul>
+                <li><strong>Request a copy</strong> of your personal information</li>
+                <li><strong>Review data</strong> stored about you</li>
+                <li><strong>Verify accuracy</strong> of information</li>
+            </ul>
+            
+            <h3>2. Modification and Deletion</h3>
+            <ul>
+                <li><strong>Update your personal</strong> information</li>
+                <li><strong>Correct inaccurate</strong> data</li>
+                <li><strong>Delete your account</strong> and information</li>
+            </ul>
+            
+            <h3>3. Privacy Control</h3>
+            <ul>
+                <li><strong>Modify privacy</strong> settings</li>
+                <li><strong>Unsubscribe from</strong> notifications</li>
+                <li><strong>Request deletion</strong> of specific information</li>
+            </ul>
+            
+            <h2>Cookies and Similar Technologies</h2>
+            
+            <p><strong>We use various technologies to improve your experience:</strong></p>
+            
+            <h3>1. Cookies</h3>
+            <ul>
+                <li><strong>Essential cookies</strong> to ensure app functionality</li>
+                <li><strong>Analytics cookies</strong> to understand usage</li>
+                <li><strong>Preference cookies</strong> to save your settings</li>
+            </ul>
+            
+            <h3>2. Tracking Technologies</h3>
+            <ul>
+                <li><strong>Unique identifiers</strong> for devices</li>
+                <li><strong>Session and activity</strong> tracking</li>
+                <li><strong>Performance and usage</strong> analysis</li>
+            </ul>
+            
+            <h2>Data Retention</h2>
+            
+            <p><strong>We retain your information for the following periods:</strong></p>
+            
+            <h3>1. Personal Information</h3>
+            <ul>
+                <li><strong>Throughout the duration</strong> of your active account</li>
+                <li><strong>One year</strong> after account cancellation</li>
+                <li><strong>Longer if required</strong> by law</li>
+            </ul>
+            
+            <h3>2. Property Information</h3>
+            <ul>
+                <li><strong>Until property deletion</strong> from the app</li>
+                <li><strong>One year</strong> after deletion for backups</li>
+            </ul>
+            
+            <h3>3. System Logs</h3>
+            <ul>
+                <li><strong>One year</strong> for security logs</li>
+                <li><strong>6 months</strong> for usage logs</li>
+            </ul>
+            
+            <h2>Children's Privacy</h2>
+            <p>The app is not intended for children under 13 years of age. We do not collect personal information from children without parental consent.</p>
+            
+            <h2>Policy Updates</h2>
+            
+            <p><strong>We may update this policy from time to time. We will:</strong></p>
+            
+            <h3>1. Notify About Updates</h3>
+            <ul>
+                <li><strong>In-app notification</strong> about important updates</li>
+                <li><strong>Email notification</strong> to registered users</li>
+                <li><strong>Website notification</strong> publication</li>
+            </ul>
+            
+            <h3>2. Your Consent to Updates</h3>
+            <ul>
+                <li><strong>Continued app usage</strong> means consent to updates</li>
+                <li><strong>Account cancellation</strong> if you don't agree with changes</li>
+            </ul>
+            
+            <h2>Legal Compliance</h2>
+            
+            <p><strong>We are committed to compliance with the following laws:</strong></p>
+            
+            <h3>1. Local Laws</h3>
+            <ul>
+                <li><strong>Iraqi data protection</strong> laws</li>
+                <li><strong>Local commercial</strong> laws</li>
+                <li><strong>Local telecommunications</strong> regulations</li>
+            </ul>
+            
+            <h3>2. International Standards</h3>
+            <ul>
+                <li><strong>International data protection</strong> standards</li>
+                <li><strong>Best practices</strong> in cybersecurity</li>
+            </ul>
+            
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>If you have any questions about the privacy policy, you can contact us:</p>
+                
+                <h3>Contact Information:</h3>
+                <p><strong>Email:</strong> privacy@darigo.com</p>
+                <p><strong>Phone:</strong> +964-XXX-XXX-XXXX</p>
+                <p><strong>Address:</strong> Baghdad, Iraq</p>
+                
+                <h3>Response Times:</h3>
+                <p><strong>Email:</strong> within 48 hours</p>
+                <p><strong>Phone:</strong> Sunday to Thursday, 9 AM - 5 PM</p>
+            </div>
+            
+            <h2>Summary</h2>
+            <p>We are committed to protecting your privacy and ensuring the security of your information. This policy explains how we handle your personal information and we welcome any questions or suggestions you may have.</p>
+            
+            <div class="highlight">
+                <p><strong>Thank you for trusting the Dari go Real Estate App!</strong></p>
+            </div>
+        </div>
+        
+        <!-- النسخة المختصرة -->
+        <div id="content-short" class="content hidden">
+            <div class="header">
+                <h1>سياسة الخصوصية المختصرة</h1>
+                <p class="subtitle">تطبيق داري go العقاري</p>
+            </div>
+            
+            <div class="meta-info">
+                <p><strong>تاريخ آخر تحديث:</strong> ديسمبر 2024</p>
+                <p><strong>الإصدار:</strong> 1.0</p>
+                <p><strong>التطبيق:</strong> داري go - منصة العقارات</p>
+            </div>
+            
+            <h2>🔍 ما هي المعلومات التي نجمعها؟</h2>
+            <ul>
+                <li><strong>الاسم ورقم الهاتف والبريد الإلكتروني</strong></li>
+                <li><strong>تفاصيل العقارات والصور المرفوعة</strong></li>
+                <li><strong>معلومات الاستخدام والأنشطة في التطبيق</strong></li>
+                <li><strong>معلومات تقنية أساسية</strong> (نوع الجهاز، عنوان IP)</li>
+            </ul>
+            
+            <h2>⚙️ كيف نستخدم معلوماتك؟</h2>
+            <ul>
+                <li><strong>لتقديم خدمات التطبيق العقاري</strong> (عرض العقارات، التواصل)</li>
+                <li><strong>لتحسين التطبيق وتطوير ميزات جديدة</strong></li>
+                <li><strong>لإرسال إشعارات مهمة وتحديثات</strong></li>
+                <li><strong>لضمان أمان التطبيق</strong> ومنع الاحتيال</li>
+            </ul>
+            
+            <h2>🤝 هل نشارك معلوماتك؟</h2>
+            <div class="highlight">
+                <p><strong>لا نبيع معلوماتك الشخصية لأطراف ثالثة.</strong></p>
+            </div>
+            <ul>
+                <li><strong>نشارك المعلومات فقط مع موافقتك</strong> أو للأغراض القانونية</li>
+                <li><strong>نستخدم مقدمي خدمات موثوقين</strong> لحماية بياناتك</li>
+                <li><strong>نحترم خصوصيتك</strong> ولا نشارك معلوماتك دون ضرورة</li>
+            </ul>
+            
+            <h2>🔐 حقوقك</h2>
+            <ul>
+                <li><strong>يمكنك الوصول وتعديل معلوماتك الشخصية</strong></li>
+                <li><strong>يمكنك حذف حسابك في أي وقت</strong></li>
+                <li><strong>يمكنك تعديل إعدادات الخصوصية</strong></li>
+                <li><strong>يمكنك إلغاء الاشتراك في الإشعارات</strong></li>
+            </ul>
+            
+            <h2>🛡️ الأمان</h2>
+            <ul>
+                <li><strong>نستخدم تشفير قوي</strong> لحماية بياناتك</li>
+                <li><strong>نطبق إجراءات أمنية صارمة</strong></li>
+                <li><strong>نحتفظ ببياناتك بأمان</strong> مع نسخ احتياطية منتظمة</li>
+                <li><strong>نراقب الأنشطة المشبوهة</strong> لحماية حسابك</li>
+            </ul>
+            
+            <h2>📱 ملفات تعريف الارتباط</h2>
+            <p>نستخدم ملفات تعريف الارتباط لتحسين تجربتك في التطبيق:</p>
+            <ul>
+                <li><strong>ملفات أساسية</strong> لضمان عمل التطبيق</li>
+                <li><strong>ملفات تحليلية</strong> لفهم الاستخدام (مجهولة الهوية)</li>
+                <li><strong>ملفات تفضيلات</strong> لحفظ إعداداتك</li>
+            </ul>
+            
+            <h2>⏰ الاحتفاظ بالبيانات</h2>
+            <ul>
+                <li><strong>المعلومات الشخصية:</strong> طوال فترة وجود حسابك النشط + سنة واحدة بعد الإلغاء</li>
+                <li><strong>معلومات العقارات:</strong> حتى حذف العقار + سنة واحدة للنسخ الاحتياطية</li>
+                <li><strong>سجلات النظام:</strong> سنة واحدة لسجلات الأمان، 6 أشهر لسجلات الاستخدام</li>
+            </ul>
+            
+            <h2>👶 خصوصية الأطفال</h2>
+            <p>التطبيق غير مخصص للأطفال دون سن 13 عاماً. نحن لا نجمع معلومات شخصية من الأطفال دون موافقة الوالدين.</p>
+            
+            <h2>🔄 التحديثات</h2>
+            <p>قد نحدث هذه السياسة من وقت لآخر. سنقوم بإشعارك عن التحديثات المهمة عبر:</p>
+            <ul>
+                <li><strong>إشعار في التطبيق</strong></li>
+                <li><strong>بريد إلكتروني</strong> للمستخدمين المسجلين</li>
+                <li><strong>نشر الإشعار</strong> على موقعنا الإلكتروني</li>
+            </ul>
+            
+            <div class="contact-info">
+                <h3>📞 التواصل معنا</h3>
+                <p>إذا كان لديك أي أسئلة حول سياسة الخصوصية:</p>
+                
+                <p><strong>📧 البريد الإلكتروني:</strong> privacy@darigo.com</p>
+                <p><strong>📱 الهاتف:</strong> +964-XXX-XXX-XXXX</p>
+                <p><strong>📍 العنوان:</strong> بغداد، العراق</p>
+                
+                <p><strong>⏰ أوقات الاستجابة:</strong></p>
+                <p>البريد الإلكتروني: خلال 48 ساعة</p>
+                <p>الهاتف: من الأحد إلى الخميس، 9 صباحاً - 5 مساءً</p>
+            </div>
+            
+            <div class="highlight">
+                <h3>✅ الخلاصة</h3>
+                <p>نحن ملتزمون بحماية خصوصيتك وضمان أمان معلوماتك. هذه السياسة تشرح كيفية تعاملنا مع معلوماتك الشخصية ونحن نرحب بأي استفسارات أو اقتراحات لديك.</p>
+                <p><strong>شكراً لثقتك في تطبيق داري go العقاري! 🏠</strong></p>
+            </div>
+        </div>
+        
         <div class="footer">
-            <p>هذه السياسة سارية المفعول اعتباراً من ديسمبر 2024 وتخضع للتحديثات الدورية حسب الحاجة.</p>
+            <p id="footer-text">هذه السياسة سارية المفعول اعتباراً من ديسمبر 2024 وتخضع للتحديثات الدورية حسب الحاجة.</p>
             <p>&copy; 2024 داري go - جميع الحقوق محفوظة</p>
         </div>
     </div>
 
     <script>
-        // JavaScript لتغيير اللغة
+        let currentLanguage = 'ar';
+        
         function changeLanguage(lang) {
-            const urlParams = new URLSearchParams(window.location.search);
-            urlParams.set('lang', lang);
-            window.location.search = urlParams.toString();
+            currentLanguage = lang;
+            
+            // إخفاء جميع المحتويات
+            document.getElementById('content-ar').classList.add('hidden');
+            document.getElementById('content-en').classList.add('hidden');
+            document.getElementById('content-short').classList.add('hidden');
+            
+            // إزالة النشط من جميع الأزرار
+            document.getElementById('lang-ar').classList.remove('active');
+            document.getElementById('lang-en').classList.remove('active');
+            document.getElementById('lang-short').classList.remove('active');
+            
+            // إظهار المحتوى المطلوب
+            if (lang === 'ar') {
+                document.getElementById('content-ar').classList.remove('hidden');
+                document.getElementById('lang-ar').classList.add('active');
+                document.body.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ar');
+                document.title = 'سياسة الخصوصية - تطبيق داري go العقاري';
+            } else if (lang === 'en') {
+                document.getElementById('content-en').classList.remove('hidden');
+                document.getElementById('lang-en').classList.add('active');
+                document.body.setAttribute('dir', 'ltr');
+                document.documentElement.setAttribute('lang', 'en');
+                document.title = 'Privacy Policy - Darigo Real Estate App';
+            } else if (lang === 'short') {
+                document.getElementById('content-short').classList.remove('hidden');
+                document.getElementById('lang-short').classList.add('active');
+                document.body.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ar');
+                document.title = 'سياسة الخصوصية المختصرة - تطبيق داري go العقاري';
+            }
+            
+            // تحديث URL
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            window.history.pushState({}, '', url);
         }
-
-        // تحديث الروابط عند تحميل الصفحة
+        
+        // تحميل اللغة من URL عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
-            const currentLang = urlParams.get('lang') || 'ar';
-            
-            // تحديث الروابط
-            const links = document.querySelectorAll('.language-switcher a');
-            links.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href.includes('?lang=')) {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const lang = href.split('=')[1];
-                        changeLanguage(lang);
-                    });
-                }
-            });
-            
-            // تحديث النشط
-            links.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes('lang=' + currentLang)) {
-                    link.classList.add('active');
-                }
-            });
+            const lang = urlParams.get('lang') || 'ar';
+            changeLanguage(lang);
         });
     </script>
 </body>
